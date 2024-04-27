@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:root{
+    --primary-color : #0C00FF ;
+    --sec-color : #a9a9a9;
+    --primary-bg : #000000 ;
+    --sec-bg : #1B1B1B ;
+}
+
+*{
+    margin : 0 ;
+    padding : 0 ;
+    box-sizing: border-box;
+    font-family: "Inknut Antiqua", Inknut Antiqua , serif;
+    transition: all ease .3s;
+    /* font-family:Calibri,sans-serif; */
+}
+
+*::-webkit-scrollbar{
+    display : none ;
+}
+
+body{
+    max-width : 2000px ;
+    background-color: var(--primary-bg);
+    position: relative;
+    width : 100% ;
+    min-height : 100vh ;
+}
