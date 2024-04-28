@@ -1,6 +1,6 @@
 const MessageBar = () => {
   return (
-  <div className="w-[270px] h-[100vh] bg-[--sec-bg] flex flex-col justify-around items-center text-white">
+  <div className="w-[270px] h-[100vh] bg-[--sec-bg] flex flex-col justify-around items-center text-[--main-color]">
     Message Box
       </div>
   )

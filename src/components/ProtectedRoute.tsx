@@ -3,7 +3,7 @@ import {useState} from "react"
 
 const ProtectedRoute = () => {
     const [auth,setAuth] = useState(true) ;
-  return auth ? <Outlet /> : <Navigate to="/login" />
+  return auth ? <Outlet /> : <Navigate to="/login" /> 
 }
 
 export default ProtectedRoute

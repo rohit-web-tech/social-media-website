@@ -3,17 +3,27 @@
 @tailwind utilities;
 
 *:root{
-    --primary-color : #0C00FF ;
-    --sec-color : #a9a9a9;
-    --primary-bg : #000000 ;
-    --sec-bg : #1B1B1B ;
+    --primary-color : #0195ff77;
+    --sec-color : #121212;
+    --primary-bg :rgb(243 244 246) ;  
+    --sec-bg :rgb(255, 255, 255);  
+    --main-color : #0c0c0c ;
+    --border-color : #cacaca ;
 }
-
+body.dark{
+    --main-color : #fff ;
+    --primary-color : #0195ff77;
+    --sec-color : #cecece;
+    --primary-bg : #18202c ;  
+    --sec-bg :rgb(17 24 39 );  
+    --border-color : #2a3957 ;
+}
 *{
     margin : 0 ;
     padding : 0 ;
     box-sizing: border-box;
-    font-family: "Inknut Antiqua", Inknut Antiqua , serif;
+    font-family: "Inter", sans-serif;
+    /* font-family: "Inknut Antiqua", Inknut Antiqua , serif; */
     transition: all ease .3s;
     /* font-family:Calibri,sans-serif; */
 }
@@ -23,9 +33,18 @@
 }
 
 body{
-    max-width : 2000px ;
     background-color: var(--primary-bg);
     position: relative;
     width : 100% ;
     min-height : 100vh ;
+}
+
+.active{
+    filter: invert(100%) sepia(1%) saturate(555%) hue-rotate(243deg) brightness(150%) contrast(100%);
+}
+.non-active{
+    filter: invert(44%) sepia(84%) saturate(1128%) hue-rotate(160deg) brightness(92%) contrast(101%);
+}
+body.dark .active{
+    filter: invert(100%) sepia(1%) saturate(555%) hue-rotate(243deg) brightness(116%) contrast(100%);
 }

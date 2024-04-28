@@ -1,4 +1,5 @@
-import logo from '../assets/chit-chat-high-resolution-logo-transparent (1).png' ;
+import lightlogo from '../assets/logo.png' ;
+import darkLogo from '../assets/logo dark.png' ;
 import profile from "../assets/delicious-3d-burger-with-modern-smartphone_23-2150914629.jpg" ;
 import ListItem from '../components/ListItem';
 import home from '../assets/home.svg'
@@ -13,7 +14,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-const Navbar = () => {
+const Navbar =(props:{mode:string}) => {
+    const {mode} = props ;
     const navigate = useNavigate();
     const [activePage,setActivePage] = useState("") ;
     const location = useLocation()
@@ -29,24 +31,24 @@ const Navbar = () => {
 
   return (
     <div className="sm:flex hidden w-[270px] min-h-[700px] h-[100vh] bg-[--sec-bg] flex-col justify-around items-center relative">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-5">
           <img 
-          src={logo} 
+          src={mode==="light"?lightlogo:darkLogo} 
           alt="Chit Chat" 
-          className="h-[62px] w-[202px] hover:cursor-pointer"
+          className="h-[62px] w-[202px] hover:cursor-pointer opacity-70"
           onClick={()=>{
             navigate("/");
           }} 
           />
           <div 
-          className="flex gap-2 justify-center items-center text-white hover:cursor-pointer" 
+          className="flex gap-2 justify-between items-center  text-[--main-color] hover:cursor-pointer w-[100%]" 
           onClick={()=>{
             navigate("/profile");
           }}
           >
             <img src={profile} alt="profile" className="h-[50px] w-[50px] rounded-[50%]" />
             <div>
-              <p className="font-semibold text-[.9rem] tracking-[1px]">Rohit Web Tech</p>
+              <p className="font-semibold text-[1rem] tracking-[1px]">Rohit Web Tech</p>
               <p className="text-[.6rem] text-[--sec-color]">rohitdogra0127@gmail.com</p>
             </div>
           </div>
@@ -64,7 +66,7 @@ const Navbar = () => {
           <nav className='flex flex-col justify-center items-start relative w-[80%]'>
             <ul className='flex flex-col justify-center items-start relative w-[100%] gap-1'>
                 <ListItem bg={logout} text="Log Out" isActive={checkActive("/logout")} endPoint="/logout"/>
-                <ListItem bg={settings} text="Seetings" isActive={checkActive("/settings")} endPoint="/settings"/>
+                <ListItem bg={settings} text="Settings" isActive={checkActive("/settings")} endPoint="/settings"/>
             </ul>
           </nav>
       </div>

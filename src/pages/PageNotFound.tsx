@@ -1,6 +1,6 @@
 const PageNotFound = () => {
   return (
-    <div className="text-white text-3xl">
+    <div className="text-[--main-color] text-3xl">
         404 !! Page Not Found !!
     </div>
   )

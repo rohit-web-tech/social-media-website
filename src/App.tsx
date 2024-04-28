@@ -3,7 +3,7 @@ import Login from "./pages/Login"
 import ProtectedRoute from "./components/ProtectedRoute"
 import Navbar from "./pages/NavBar"
 import Home from "./pages/Home"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MessageBar from "./pages/MessageBar"
 import Search from "./pages/Search" ;
 import Saved from "./pages/Saved"
@@ -16,11 +16,15 @@ import ProfilePage from "./pages/ProfilePage"
 import PageNotFound from "./pages/PageNotFound"
 
 function App() {
+  useEffect(()=>{
+    setMode(document.body.classList.contains("dark")?"dark":"light")
+  },[])
+  const [mode,setMode] = useState(document.body.classList.contains("dark")?"dark":"light") ;
   const [auth,setAuth] = useState(true);
   return (
     <BrowserRouter>
-    <div className="flex justify-between">
-    {auth&&<Navbar/>}
+    <div className="flex justify-between w-[100%] relative">
+    {auth&&<Navbar mode={mode}/>}
     <Routes>
       <Route element={<ProtectedRoute/>}>
         <Route path="/" element={<Home/>}/>
@@ -29,7 +33,7 @@ function App() {
         <Route path="/saved" element={<Saved/>}/>
         <Route path="/createpost" element={<CreatePost/>}/>
         <Route path="/live" element={<Live/>}/>
-        <Route path="/settings" element={<Settings/>}/>
+        <Route path="/settings" element={<Settings mode={mode} setMode={setMode}/>}/>
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
       </Route>

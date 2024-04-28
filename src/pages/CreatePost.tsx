@@ -1,6 +1,6 @@
 const CreatePost = () => {
   return (
-    <div className='text-white text-3xl'>
+    <div className='text-[--main-color] text-3xl'>
     Create Post Page
   </div>
   )

@@ -1,6 +1,6 @@
 const Live = () => {
   return (
-    <div className='text-white text-3xl'>
+    <div className='text-[--main-color] text-3xl'>
       Live Page
     </div>
   )
