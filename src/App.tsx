@@ -20,7 +20,7 @@ function App() {
     setMode(document.body.classList.contains("dark")?"dark":"light")
   },[])
   const [mode,setMode] = useState(document.body.classList.contains("dark")?"dark":"light") ;
-  const [auth,setAuth] = useState(true);
+  const auth = true ;
   return (
     <BrowserRouter>
     <div className="flex justify-between w-[100%] relative">
