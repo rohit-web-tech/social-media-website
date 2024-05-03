@@ -1,4 +1,4 @@
-const Settings = ({setMode,mode}) => {
+const Settings = (props{setMode:()=>string,mode:string}) => {
   return (
     <div className='flex flex-col w-[60%] max-w-[1200px] mt-14'>
     <h1 className="text-[--main-color] text-2xl">Settings:</h1>
